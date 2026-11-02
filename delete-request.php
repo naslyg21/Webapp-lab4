@@ -12,7 +12,7 @@ if ($requestId === false || $requestId === null || $requestId < 1) {
   <h1>Cancel tutoring request</h1>
   <p>Cancel request <?php echo $requestId; ?>?</p>
   <form action="#" method="post">
-    <input type="hidden" name="request_id" value="12">
+    <input type="hidden" name="request_id" value="<?php echo $requestId; ?>">
     <button class="btn btn-danger" type="submit">Yes, cancel request</button>
     <a class="btn btn-secondary" href="request-details.php?request_id=<?php echo $requestId; ?>">Keep request</a>
   </form>
