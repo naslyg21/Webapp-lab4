@@ -92,3 +92,27 @@ The edit-request.php file displays a form populated with existing tutoring reque
 ### Delete Operation – delete-request.php
 
 The delete-request.php file retrieves and validates a request ID using the GET method and FILTER_VALIDATE_INT. It displays a confirmation page allowing users to cancel or keep a tutoring request. The confirmation form uses POST to submit the cancellation, while the Keep request link returns to the request details. The current starter code does not implement permanent deletion.
+
+## Part 5: CRUD Operations
+
+| CRUD action | Page |
+|---|---|
+| Create | request-form.php |
+| Read one request | request-details.php |
+| Read all requests | requests.php |
+| Update | edit-request.php |
+| Delete | delete-request.php |
+
+### Questions
+
+**1. What query parameter appears in the request details URL?**
+
+The query parameter is `request_id`, for example `request-details.php?request_id=12`.
+
+**2. Why is a GET query parameter appropriate for viewing one request?**
+
+GET is appropriate because it retrieves information without changing data. It also allows a specific request to be accessed through a URL.
+
+**3. Why should an actual update or delete later use POST rather than GET?**
+
+POST is more appropriate for operations that change data. It prevents updates or deletions from being triggered simply by opening a URL. The server should also validate the request and use CSRF protection.
